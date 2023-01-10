@@ -1,0 +1,8 @@
+#!/bin/bash
+
+n=$(wc -l "$1" | cut -d' ' -f 1)
+
+randline=$((($RANDOM % $n) + 1))
+
+echo Line $randline:
+head -n $randline $1 | tail -1
